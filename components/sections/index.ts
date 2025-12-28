@@ -1,6 +1,7 @@
 export { HeroSection } from "./hero-section"
 export { PhilosophySection } from "./philosophy-section"
 export { CapabilitiesSection } from "./capabilities-section"
+export { NeuralNetworkDivider } from "./neural-network-divider"
 export { WorkSection } from "./work-section"
 export { ScaleSection } from "./scale-section"
 export { ContactSection } from "./contact-section"
