@@ -15,12 +15,18 @@ const technologies = [
 
   // Cloud & Infrastructure
   { name: "AWS", iconKey: "AWS", category: "Cloud" },
+  { name: "VPC", iconKey: "VPC", category: "Cloud" },
   { name: "EC2", iconKey: "EC2", category: "Cloud" },
   { name: "ECS", iconKey: "ECS", category: "Cloud" },
+  { name: "S3", iconKey: "S3", category: "Cloud" },
   { name: "Lambda", iconKey: "Lambda", category: "Cloud" },
   { name: "RDS", iconKey: "RDS", category: "Cloud" },
   { name: "Route 53", iconKey: "Route53", category: "Cloud" },
+  { name: "CloudWatch", iconKey: "CloudWatch", category: "Cloud" },
+  { name: "ElastiCache", iconKey: "ElastiCache", category: "Cloud" },
   { name: "ECR", iconKey: "ECR", category: "Cloud" },
+  { name: "SageMaker", iconKey: "SageMaker", category: "Cloud" },
+  { name: "Secrets Manager", iconKey: "SecretsManager", category: "Cloud" },
   { name: "Docker", iconKey: "Docker", category: "DevOps" },
   { name: "NGINX", iconKey: "NGINX", category: "DevOps" },
   { name: "GitHub Actions", iconKey: "GitHub", category: "CI/CD" },
@@ -56,6 +62,7 @@ const technologies = [
   { name: "Supabase", iconKey: "Supabase", category: "BaaS" },
 
   // Geo & ML
+  { name: "Vercel", iconKey: "Vercel", category: "Cloud" },
   { name: "Earth Engine", iconKey: "EarthEngine", category: "ML" },
   { name: "QGIS", iconKey: "QGIS", category: "Geo" },
 ]
@@ -70,8 +77,8 @@ const capabilities = [
   {
     title: "AWS Infrastructure",
     description:
-      "EC2, ECS, Lambda, RDS, Route 53, ECR. Secure VPCs with strict RBAC. Infrastructure as code.",
-    techs: ["EC2", "ECS", "Lambda", "RDS", "Route 53"],
+      "VPC, EC2, ECS, Lambda, RDS, S3, CloudWatch, Route 53. Secure networking with strict RBAC. Iac with Terraform.",
+    techs: ["VPC", "EC2", "ECS", "Lambda", "RDS", "S3", "CloudWatch"],
   },
   {
     title: "LLM & Voice Agents",
