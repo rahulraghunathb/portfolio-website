@@ -52,6 +52,9 @@ const technologies = [
   { name: "Razorpay", iconKey: "Razorpay", category: "Payments" },
   { name: "Apify", iconKey: "Apify", category: "Scraping" },
 
+  // Database & BaaS
+  { name: "Supabase", iconKey: "Supabase", category: "BaaS" },
+
   // Geo & ML
   { name: "Earth Engine", iconKey: "EarthEngine", category: "ML" },
   { name: "QGIS", iconKey: "QGIS", category: "Geo" },
@@ -91,8 +94,8 @@ const capabilities = [
   {
     title: "Vector & Data",
     description:
-      "ChromaDB for embeddings, MySQL, MongoDB, satellite imagery. Clean, accessible data.",
-    techs: ["ChromaDB", "MySQL", "MongoDB", "Python"],
+      "ChromaDB for embeddings, Supabase, MySQL, MongoDB. Clean, accessible data at scale.",
+    techs: ["ChromaDB", "Supabase", "MySQL", "MongoDB"],
   },
 ]
 
