@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Rahul Bodanki — Lead Product Engineer",
+  title: "Rahul Raghunath Bodanki — Lead Product Engineer",
   description:
     "Systems that survive scale. Event-driven architecture, cloud platforms, and products that handle uncertainty.",
 }

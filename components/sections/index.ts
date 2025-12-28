@@ -1,0 +1,7 @@
+export { HeroSection } from "./hero-section"
+export { PhilosophySection } from "./philosophy-section"
+export { CapabilitiesSection } from "./capabilities-section"
+export { WorkSection } from "./work-section"
+export { ScaleSection } from "./scale-section"
+export { ContactSection } from "./contact-section"
+export { Footer } from "./footer"
