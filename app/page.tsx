@@ -2,7 +2,6 @@ import {
   HeroSection,
   PhilosophySection,
   CapabilitiesSection,
-  NeuralNetworkDivider,
   WorkSection,
   ScaleSection,
   ContactSection,
@@ -15,7 +14,6 @@ export default function Home() {
       <HeroSection />
       <PhilosophySection />
       <CapabilitiesSection />
-      <NeuralNetworkDivider />
       <WorkSection />
       <ScaleSection />
       <ContactSection />

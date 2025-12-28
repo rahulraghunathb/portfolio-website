@@ -8,73 +8,91 @@ import { TechIcons } from "@/components/ui/tech-icons"
 const technologies = [
   // Languages & Frameworks
   { name: "Python", iconKey: "Python", category: "Backend" },
+  { name: "Node.js", iconKey: "NodeJS", category: "Backend" },
   { name: "FastAPI", iconKey: "FastAPI", category: "Backend" },
   { name: "Flask", iconKey: "Flask", category: "Backend" },
-  { name: "TypeScript", iconKey: "TypeScript", category: "Frontend" },
   { name: "Next.js", iconKey: "NextJS", category: "Frontend" },
-  { name: "React", iconKey: "React", category: "Frontend" },
 
-  // Infrastructure
+  // Cloud & Infrastructure
   { name: "AWS", iconKey: "AWS", category: "Cloud" },
+  { name: "EC2", iconKey: "EC2", category: "Cloud" },
+  { name: "ECS", iconKey: "ECS", category: "Cloud" },
+  { name: "Lambda", iconKey: "Lambda", category: "Cloud" },
+  { name: "RDS", iconKey: "RDS", category: "Cloud" },
+  { name: "Route 53", iconKey: "Route53", category: "Cloud" },
+  { name: "ECR", iconKey: "ECR", category: "Cloud" },
   { name: "Docker", iconKey: "Docker", category: "DevOps" },
   { name: "NGINX", iconKey: "NGINX", category: "DevOps" },
   { name: "GitHub Actions", iconKey: "GitHub", category: "CI/CD" },
 
-  // Data & ML
+  // Data & Vector
   { name: "Redis", iconKey: "Redis", category: "Data" },
   { name: "MySQL", iconKey: "MySQL", category: "Data" },
   { name: "MongoDB", iconKey: "MongoDB", category: "Data" },
+  { name: "ChromaDB", iconKey: "ChromaDB", category: "Vector" },
   { name: "Celery", iconKey: "Celery", category: "Queue" },
+  { name: "Pub/Sub", iconKey: "PubSub", category: "Queue" },
 
   // APIs & Real-time
   { name: "REST", iconKey: "REST", category: "API" },
   { name: "WebSockets", iconKey: "WebSockets", category: "API" },
   { name: "WhatsApp API", iconKey: "WhatsApp", category: "Messaging" },
   { name: "Firebase", iconKey: "Firebase", category: "Cloud" },
+  { name: "SSH", iconKey: "SSH", category: "Infra" },
 
-  // ML & Geo
+  // AI & LLM
+  { name: "OpenAI", iconKey: "OpenAI", category: "AI" },
+  { name: "Gemini", iconKey: "Gemini", category: "AI" },
+  { name: "LangChain", iconKey: "LangChain", category: "AI" },
+  { name: "LiveKit", iconKey: "LiveKit", category: "Voice" },
+  { name: "Cursor", iconKey: "Cursor", category: "AI IDE" },
+  { name: "Windsurf", iconKey: "Windsurf", category: "AI IDE" },
+
+  // Payments & Scraping
+  { name: "Razorpay", iconKey: "Razorpay", category: "Payments" },
+  { name: "Apify", iconKey: "Apify", category: "Scraping" },
+
+  // Geo & ML
   { name: "Earth Engine", iconKey: "EarthEngine", category: "ML" },
   { name: "QGIS", iconKey: "QGIS", category: "Geo" },
-  { name: "Whisper", iconKey: "Whisper", category: "AI" },
-  { name: "LangChain", iconKey: "LangChain", category: "AI" },
 ]
 
 const capabilities = [
   {
     title: "Event Architecture",
     description:
-      "Redis, Celery, Webhooks, async retries. Systems that communicate through events, not assumptions.",
-    techs: ["Redis", "Celery", "WebSockets"],
+      "Redis, Celery, Pub/Sub, async retries. Systems that communicate through events, not assumptions.",
+    techs: ["Redis", "Celery", "Pub/Sub", "WebSockets"],
   },
   {
-    title: "Cloud Platforms",
+    title: "AWS Infrastructure",
     description:
-      "AWS, Docker, ECS, NGINX. Secure VPCs with strict RBAC. Infrastructure as code.",
-    techs: ["AWS", "Docker", "NGINX", "GitHub Actions"],
+      "EC2, ECS, Lambda, RDS, Route 53, ECR. Secure VPCs with strict RBAC. Infrastructure as code.",
+    techs: ["EC2", "ECS", "Lambda", "RDS", "Route 53"],
   },
   {
-    title: "ML Pipelines",
+    title: "LLM & Voice Agents",
     description:
-      "Random Forest, Earth Engine, QGIS. Satellite imagery and weather models → actionable insights.",
-    techs: ["Earth Engine", "QGIS", "Python"],
+      "OpenAI, Gemini APIs, LiveKit for real-time voice. LangChain for orchestration. AI-powered workflows.",
+    techs: ["OpenAI", "Gemini", "LiveKit", "LangChain"],
   },
   {
     title: "API Design",
     description:
-      "FastAPI, Flask, REST, WebSockets. 200+ production APIs. Contracts that don't break.",
-    techs: ["FastAPI", "Flask", "REST", "WebSockets"],
+      "FastAPI, Flask, Node.js, REST, WebSockets. 200+ production APIs. Contracts that don't break.",
+    techs: ["FastAPI", "Flask", "Node.js", "REST", "WebSockets"],
   },
   {
-    title: "Real-Time Systems",
+    title: "Payments & Scraping",
     description:
-      "WhatsApp Business API, Firebase, push notifications at scale.",
-    techs: ["WhatsApp API", "Firebase", "Redis"],
+      "Razorpay payment gateway integration. Apify for web scraping at scale. SSH automation pipelines.",
+    techs: ["Razorpay", "Apify", "SSH"],
   },
   {
-    title: "Data Engineering",
+    title: "Vector & Data",
     description:
-      "MySQL, MongoDB, geospatial data, ETL pipelines. Clean, accessible data.",
-    techs: ["MySQL", "MongoDB", "Python"],
+      "ChromaDB for embeddings, MySQL, MongoDB, satellite imagery. Clean, accessible data.",
+    techs: ["ChromaDB", "MySQL", "MongoDB", "Python"],
   },
 ]
 
@@ -136,9 +154,7 @@ export function CapabilitiesSection() {
                     className="group flex items-center gap-2 px-3 py-2 bg-surface/50 border border-border hover:border-neon/50 rounded-sm transition-all hover:scale-105 cursor-default"
                     style={{ animationDelay: `${idx * 50}ms` }}
                   >
-                    {IconComponent && (
-                      <IconComponent className="w-4 h-4 text-muted group-hover:text-neon transition-colors" />
-                    )}
+                    {IconComponent && <IconComponent className="w-4 h-4" />}
                     <span className="text-xs font-mono text-muted group-hover:text-foreground transition-colors">
                       {tech.name}
                     </span>
