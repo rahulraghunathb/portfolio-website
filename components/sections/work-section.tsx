@@ -67,7 +67,7 @@ export function WorkSection() {
           <div className="md:col-span-1 min-h-[300px]">
             <RevealText delay={0.2} className="h-full">
               <BentoProjectCard
-                title="Excel Lite"
+                title="Excel Lite - VS Code Extension"
                 description={[
                   "Spreadsheet-style Excel/CSV viewer and editor inside VS Code.",
                   "100+ marketplace downloads.",
@@ -75,10 +75,7 @@ export function WorkSection() {
                 year="2026"
                 tech={["JavaScript", "Node.js", "Webview"]}
                 link="https://marketplace.visualstudio.com/items?itemName=rahulraghunathb.excel-lite"
-                images={[
-                  "https://placehold.co/600x400/22c55e/ffffff?text=Excel+Lite+1",
-                  "https://placehold.co/600x400/16a34a/ffffff?text=Excel+Lite+2",
-                ]}
+                images={["/excel-extension-2.png", "/excel-extension-1.png"]}
                 className="h-full"
               />
             </RevealText>
@@ -97,8 +94,8 @@ export function WorkSection() {
                 tech={["FastAPI", "ChromaDB", "Ollama"]}
                 link="https://github.com/rahulraghunathb/rag-tutor"
                 images={[
-                  "https://placehold.co/600x400/3b82f6/ffffff?text=RAG+Tutor+1",
-                  "https://placehold.co/600x400/2563eb/ffffff?text=RAG+Tutor+2",
+                  "https://placehold.co/600x400/3b82f6/ffffff?text=RAG+Tutor",
+                  "https://placehold.co/600x400/2563eb/ffffff?text=RAG+Tutor",
                 ]}
                 className="h-full"
               />
@@ -117,8 +114,8 @@ export function WorkSection() {
                 year="2023"
                 tech={["React Native", "Node.js", "IoT"]}
                 images={[
-                  "https://placehold.co/600x400/ef4444/ffffff?text=IoT+App+1",
-                  "https://placehold.co/600x400/dc2626/ffffff?text=IoT+App+2",
+                  "https://placehold.co/600x400/ef4444/ffffff?text=IoT+App",
+                  "https://placehold.co/600x400/dc2626/ffffff?text=IoT+App",
                 ]}
                 className="h-full"
               />

@@ -32,7 +32,7 @@ export function BentoProjectCard({
     if (isHovered && images.length > 1) {
       interval = setInterval(() => {
         setCurrentImage((prev) => (prev + 1) % images.length)
-      }, 1500)
+      }, 2000)
     } else {
       setCurrentImage(0)
     }
@@ -42,61 +42,85 @@ export function BentoProjectCard({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-md border border-border bg-surface/50 p-6 transition-all hover:border-neon/50 flex flex-col h-full",
+        "group relative overflow-hidden rounded-xl border border-border/50 bg-surface/30 transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_30px_rgba(var(--neon-rgb),0.05)] flex flex-col h-full",
         className,
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Background Image/Slideshow */}
-      <div className="absolute inset-0 -z-10 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-background/50">
-        {images.length > 0 && (
-          <img
+      {/* Image Container - Dedicated for visual impact */}
+      <div className="relative h-48 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImage}
             src={images[currentImage]}
             alt={title}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6, ease: "circOut" }}
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
           />
+        </AnimatePresence>
+
+        {/* Play overlay for slideshow hint */}
+        {images.length > 1 && (
+          <div className="absolute top-3 right-3 p-1.5 rounded-full bg-background/60 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+            <Play className="w-2.5 h-2.5 text-white fill-white" />
+          </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60" />
       </div>
 
-      <div className="flex justify-between items-start mb-4">
-        <span className="text-xs font-mono text-muted border border-border px-2 py-1 rounded-sm bg-background/50">
-          {year}
-        </span>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1.5 rounded-sm bg-background/50 border border-border text-muted hover:text-neon hover:border-neon/50 transition-colors"
-          >
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        )}
-      </div>
-
-      <h3 className="text-xl font-bold font-display mb-3 group-hover:text-neon transition-colors">
-        {title}
-      </h3>
-
-      <div className="space-y-2 mb-6 flex-grow">
-        {description.map((line, i) => (
-          <p key={i} className="text-xs text-muted leading-relaxed">
-            {line}
-          </p>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap gap-2 mt-auto">
-        {tech.map((t) => (
-          <span
-            key={t}
-            className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded-xs bg-accent/10 text-accent/80 border border-accent/20"
-          >
-            {t}
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-center mb-4">
+          <span className="text-[10px] font-mono text-neon border border-neon/20 px-2 py-0.5 rounded-full bg-neon/5 uppercase tracking-wider">
+            {year}
           </span>
-        ))}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-full bg-white/5 border border-white/10 text-muted hover:text-accent hover:bg-white/10 transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
+
+        <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-neon transition-colors tracking-tight">
+          {title}
+        </h3>
+
+        <div className="space-y-2 mb-6 flex-grow">
+          {description.map((line, i) => (
+            <p
+              key={i}
+              className="text-sm text-muted/80 leading-relaxed font-sans"
+            >
+              {line}
+            </p>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-border/30">
+          {tech.map((t) => (
+            <span
+              key={t}
+              className="text-[9px] uppercase font-mono px-2 py-0.5 rounded-sm bg-surface-lighter text-muted-foreground border border-border/50"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Subtle corner accent */}
+      <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[1px] h-4 bg-neon/30" />
+        <div className="absolute top-0 right-0 w-4 h-[1px] bg-neon/30" />
       </div>
     </div>
   )

@@ -2,7 +2,6 @@
 
 import { RevealText } from "@/components/ui/reveal-text"
 import { PRDPreview } from "@/components/ui/prd-preview"
-import { GlitchText } from "@/components/ui/glitch-text"
 
 export function SummarySection() {
   return (

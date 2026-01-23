@@ -79,13 +79,13 @@ export function ProfileCard({
 
           {/* Contact Info below name */}
           {(email || phone) && (
-            <div className="flex flex-col gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted/60 mt-4 pt-4 border-t border-border/30">
+            <div className="flex flex-col gap-1.5 font-mono text-[10px] tracking-wider text-muted/60 mt-4 pt-4 border-t border-border/30">
               {email && (
                 <a
                   href={`mailto:${email}`}
-                  className="hover:text-neon transition-colors select-all"
+                  className="hover:text-neon transition-colors select-all lowercase"
                 >
-                  {email}
+                  {email.toLowerCase()}
                 </a>
               )}
               {phone && (
