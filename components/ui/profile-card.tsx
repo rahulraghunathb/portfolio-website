@@ -8,6 +8,8 @@ interface ProfileCardProps {
   status: string
   availability: string
   imageSrc?: string
+  email?: string
+  phone?: string
 }
 
 export function ProfileCard({
@@ -16,6 +18,8 @@ export function ProfileCard({
   status,
   availability,
   imageSrc,
+  email,
+  phone,
 }: ProfileCardProps) {
   const capabilities = [
     {
@@ -35,64 +39,86 @@ export function ProfileCard({
     {
       icon: Layers,
       title: "PRODUCT_FIRST",
-      items: [
-        "UX-Centric Engineering",
-        "Scalable Foundations",
-        "Agile Mindset",
-      ],
+      items: ["UX-Centric Engineering", "Scalable Foundations"],
     },
   ]
 
   return (
-    <div className="relative p-6 bg-surface border border-border rounded-sm w-full max-w-sm overflow-hidden">
+    <div className="relative p-8 bg-surface border border-border rounded-sm w-full max-w-sm overflow-hidden group">
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
 
-      <div className="relative z-10">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-6">
-          <div className="flex items-center gap-3">
-            {/* Avatar */}
-            <div className="w-12 h-12 rounded-sm bg-gradient-to-br from-neon/20 to-neon/5 border border-neon/30 flex items-center justify-center overflow-hidden">
-              {imageSrc ? (
-                <img
-                  src={imageSrc}
-                  alt={name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <Cpu className="w-6 h-6 text-neon" />
-              )}
-            </div>
-            <div>
-              <p className="text-[10px] font-mono text-neon uppercase tracking-wider">
-                {role}
-              </p>
-              <p className="text-lg font-semibold text-accent">{name}</p>
-            </div>
+      <div className="relative z-10 flex flex-col items-center text-center">
+        {/* Large Circular Avatar */}
+        <div className="relative mb-8">
+          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-neon/20 to-neon/5 border border-neon/30 flex items-center justify-center overflow-hidden ring-4 ring-background shadow-[0_0_30px_rgba(var(--neon-rgb),0.1)]">
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={name}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            ) : (
+              <Cpu className="w-16 h-16 text-neon" />
+            )}
           </div>
-          <div className="w-6 h-6 border border-border rounded-sm flex items-center justify-center">
-            <div className="w-2 h-2 bg-neon/50 rounded-full" />
+          {/* Status Indicator */}
+          <div className="absolute bottom-4 right-4 w-5 h-5 bg-background rounded-full border border-border flex items-center justify-center">
+            <div className="w-2.5 h-2.5 bg-neon rounded-full animate-pulse" />
           </div>
         </div>
 
-        {/* Capabilities */}
-        <div className="space-y-4">
+        {/* Identity */}
+        <div className="mb-8">
+          <p className="text-xs font-mono text-neon uppercase tracking-[0.2em] mb-2">
+            {role.replace("_", " ")}
+          </p>
+          <h2 className="text-2xl font-bold text-foreground tracking-tight mb-4">
+            {name}
+          </h2>
+
+          {/* Contact Info below name */}
+          {(email || phone) && (
+            <div className="flex flex-col gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted/60 mt-4 pt-4 border-t border-border/30">
+              {email && (
+                <a
+                  href={`mailto:${email}`}
+                  className="hover:text-neon transition-colors select-all"
+                >
+                  {email}
+                </a>
+              )}
+              {phone && (
+                <a
+                  href={`tel:${phone.replace(/\s+/g, "")}`}
+                  className="hover:text-neon transition-colors select-all"
+                >
+                  {phone}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Capabilities - Grid for more visual weight */}
+        <div className="w-full space-y-6 text-left">
           {capabilities.map((cap) => (
-            <div key={cap.title}>
-              <div className="flex items-center gap-2 mb-2">
-                <cap.icon className="w-3 h-3 text-neon" />
-                <span className="text-xs font-mono text-accent uppercase tracking-wider">
+            <div key={cap.title} className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded-sm bg-neon/10 border border-neon/20 flex items-center justify-center">
+                  <cap.icon className="w-3.5 h-3.5 text-neon" />
+                </div>
+                <span className="text-sm font-bold text-foreground/90 uppercase tracking-wide">
                   {cap.title}
                 </span>
               </div>
-              <ul className="pl-5 space-y-1">
+              <ul className="grid grid-cols-1 gap-1.5 pl-9">
                 {cap.items.map((item) => (
                   <li
                     key={item}
-                    className="text-xs text-muted flex items-center gap-2"
+                    className="text-xs text-muted flex items-start gap-2"
                   >
-                    <span className="text-muted/50">-</span>
+                    <span className="text-neon/40 mt-1">▹</span>
                     {item}
                   </li>
                 ))}
@@ -101,17 +127,14 @@ export function ProfileCard({
           ))}
         </div>
 
-        {/* Status footer */}
-        <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-mono text-muted uppercase">
-              Status:
-            </span>
-            <span className="text-[10px] font-mono text-neon uppercase">
-              {status}
-            </span>
-          </div>
-          <span className="text-xs text-accent">{availability}</span>
+        {/* Footer */}
+        <div className="mt-10 w-full pt-6 border-t border-border/50 flex items-center justify-between">
+          <span className="text-[10px] font-mono text-muted uppercase tracking-widest">
+            Protocol: Active
+          </span>
+          <span className="text-[10px] font-mono text-neon uppercase tracking-widest">
+            {status}
+          </span>
         </div>
       </div>
     </div>

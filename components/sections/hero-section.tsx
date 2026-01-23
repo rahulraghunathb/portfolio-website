@@ -6,7 +6,6 @@ import { IdentityBadge } from "@/components/ui/identity-badge"
 import { DiagnosticAlert } from "@/components/ui/diagnostic-alert"
 import { ProfileCard } from "@/components/ui/profile-card"
 import { SecurityLog } from "@/components/ui/security-log"
-import { GlitchText } from "@/components/ui/glitch-text"
 
 export function HeroSection() {
   return (
@@ -31,40 +30,10 @@ export function HeroSection() {
             <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] tracking-tight">
               <span className="text-foreground">Lead</span>
               <br />
-              <GlitchText
-                text="Product"
-                className="text-foreground animate-glitch-1"
-              />
+              <span className="text-foreground">Product</span>
               <br />
-              <GlitchText
-                text="Engineer"
-                className="text-foreground animate-glitch-2"
-              />
+              <span className="text-foreground">Engineer</span>
             </h1>
-          </RevealText>
-
-          {/* Contact Protocol - Creative Display */}
-          <RevealText delay={0.15}>
-            <div className="flex flex-col gap-1 font-mono text-[10px] uppercase tracking-tighter text-muted/60">
-              <div className="flex items-center gap-2">
-                <span className="text-neon">[EMAIL]</span>
-                <a
-                  href="mailto:rahulraghunathb2.0@gmail.com"
-                  className="hover:text-neon transition-colors select-all"
-                >
-                  rahulraghunathb2.0@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-neon">[PHONE]</span>
-                <a
-                  href="tel:+917477575111"
-                  className="hover:text-neon transition-colors select-all"
-                >
-                  +91 74775 75111
-                </a>
-              </div>
-            </div>
           </RevealText>
 
           {/* Diagnostic Alert Card */}
@@ -125,14 +94,11 @@ export function HeroSection() {
             name="Rahul Raghunath Bodanki"
             status="Available"
             availability="Open to Opportunities"
-            imageSrc="https://placehold.co/400x400/10b981/000000?text=Rahul"
+            imageSrc="/profile-pic.jpg"
+            email="rahulraghunathb2.0@gmail.com"
+            phone="+91 74775 75111"
           />
         </RevealText>
-      </div>
-
-      {/* Bottom hint */}
-      <div className="absolute bottom-6 right-6 z-10 hidden lg:flex items-center gap-2 text-[10px] font-mono text-muted">
-        <span className="opacity-50">⌘</span> HOLD [SPACE] FOR X-RAY
       </div>
     </section>
   )

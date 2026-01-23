@@ -10,7 +10,7 @@ const education = [
     institution: "Indian Institute of Technology, Kharagpur",
     year: "2019-2024",
     score: "7.55/10",
-    image: "https://placehold.co/100x100/1e293b/cbd5e1?text=IIT", // Placeholder for college image
+    image: "/IITKGP-500x500.png",
   },
   {
     type: "Schooling",

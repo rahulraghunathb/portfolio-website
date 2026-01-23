@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import dynamic from "next/dynamic"
 import { RevealText } from "@/components/ui/reveal-text"
+import { cn } from "@/lib/utils"
 
 const GitHubCalendar = dynamic(
   () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
@@ -17,19 +19,43 @@ const theme = {
 }
 
 export function GitHistorySection() {
+  const [selectedYear, setSelectedYear] = useState<number | "last">(2025)
+  const years = [2026, 2025, 2024, 2023]
+
   return (
     <section className="py-8 px-6 md:px-12 lg:px-16 border-t border-border/50">
       <div className="max-w-7xl mx-auto">
         <RevealText>
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-4">
               <span className="text-neon">⌘</span>
-              <h2 className="text-sm font-mono text-muted uppercase tracking-widest">
+              <h2 className="text-sm font-mono text-muted uppercase tracking-widest flex items-center gap-3">
                 Git Activity
+                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-neon/10 border border-neon/20 animate-pulse">
+                  <span className="w-1 h-1 rounded-full bg-neon" />
+                  <span className="text-[9px] text-neon leading-none">
+                    REALTIME
+                  </span>
+                </span>
               </h2>
             </div>
-            <div className="text-[10px] font-mono text-muted/50">
-              SOURCE: GITHUB
+
+            <div className="flex items-center gap-2">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => setSelectedYear(year === 2026 ? "last" : year)} // Adjusting since 2026 might not have data yet or 'last' is better for current
+                  className={cn(
+                    "px-3 py-1 rounded-sm text-[10px] font-mono border transition-all",
+                    selectedYear === year ||
+                      (selectedYear === "last" && year === 2026)
+                      ? "bg-neon border-neon text-background"
+                      : "bg-surface border-border text-muted hover:border-neon/50 hover:text-accent",
+                  )}
+                >
+                  {year}
+                </button>
+              ))}
             </div>
           </div>
         </RevealText>
@@ -39,6 +65,7 @@ export function GitHistorySection() {
             <div className="min-w-[600px]">
               <GitHubCalendar
                 username="rahulraghunathb"
+                year={selectedYear}
                 colorScheme="dark"
                 theme={theme}
                 fontSize={12}

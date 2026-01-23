@@ -24,11 +24,7 @@ export function SummarySection() {
           <RevealText delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-display font-bold leading-tight mb-6">
               Engineering from{" "}
-              <GlitchText
-                text="First Principles"
-                className="text-neon animate-glitch-1"
-              />
-              .
+              <span className="text-neon">First Principles</span>.
             </h2>
           </RevealText>
 
