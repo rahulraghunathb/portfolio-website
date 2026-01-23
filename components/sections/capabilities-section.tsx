@@ -110,7 +110,7 @@ function TechIcon({ name, className }: { name: string; className?: string }) {
 
 export function CapabilitiesSection() {
   return (
-    <section className="relative py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
+    <section className="relative py-12 px-6 md:px-12 lg:px-16 overflow-hidden">
       {/* Neural network background animation */}
       <div className="absolute inset-0 opacity-40">
         <NeuralNetwork />

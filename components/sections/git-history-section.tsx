@@ -18,7 +18,7 @@ const theme = {
 
 export function GitHistorySection() {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-16 border-t border-border/50">
+    <section className="py-8 px-6 md:px-12 lg:px-16 border-t border-border/50">
       <div className="max-w-7xl mx-auto">
         <RevealText>
           <div className="flex items-center justify-between mb-8">

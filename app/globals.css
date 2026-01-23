@@ -108,21 +108,26 @@ body {
 /* Neon text glow */
 .neon-text {
   color: var(--neon);
-  text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon), 0 0 20px var(--neon),
+  text-shadow:
+    0 0 5px var(--neon),
+    0 0 10px var(--neon),
+    0 0 20px var(--neon),
     0 0 40px var(--neon-dim);
 }
 
 /* Subtle neon glow */
 .neon-subtle {
   color: var(--neon);
-  text-shadow: 0 0 5px oklch(0.792 0.209 151.711 / 0.5),
+  text-shadow:
+    0 0 5px oklch(0.792 0.209 151.711 / 0.5),
     0 0 10px oklch(0.792 0.209 151.711 / 0.3);
 }
 
 /* Cyan glow */
 .cyan-text {
   color: var(--cyan);
-  text-shadow: 0 0 5px oklch(0.789 0.154 211.53 / 0.5),
+  text-shadow:
+    0 0 5px oklch(0.789 0.154 211.53 / 0.5),
     0 0 10px oklch(0.789 0.154 211.53 / 0.3);
 }
 
@@ -176,6 +181,74 @@ button {
 
 p {
   line-height: 1.7;
+}
+
+/* Glitch Animations */
+@keyframes glitch-1 {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    clip-path: inset(10% 0 40% 0);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    clip-path: inset(50% 0 10% 0);
+  }
+  60% {
+    transform: translate(2px, 2px);
+    clip-path: inset(30% 0 20% 0);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    clip-path: inset(70% 0 5% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    clip-path: inset(40% 0 10% 0);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    clip-path: inset(10% 0 50% 0);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+    clip-path: inset(20% 0 30% 0);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+    clip-path: inset(5% 0 70% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-glitch-1 {
+  animation: glitch-1 0.4s infinite linear alternate-reverse;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 0.3s infinite linear alternate-reverse;
+}
+
+/* Reduced Section Padding */
+.section-padding {
+  @apply py-12 md:py-16;
 }
 
 /* Glass effect */

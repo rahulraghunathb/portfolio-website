@@ -6,7 +6,7 @@ import { BentoExperienceCard } from "@/components/ui/bento-experience-card"
 
 export function WorkSection() {
   return (
-    <section id="work" className="py-24 px-6 md:px-12 lg:px-16">
+    <section id="work" className="py-12 px-6 md:px-12 lg:px-16">
       <div className="max-w-7xl mx-auto">
         <RevealText>
           <div className="flex items-center gap-4 mb-12">

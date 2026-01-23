@@ -2,10 +2,11 @@
 
 import { RevealText } from "@/components/ui/reveal-text"
 import { PRDPreview } from "@/components/ui/prd-preview"
+import { GlitchText } from "@/components/ui/glitch-text"
 
 export function SummarySection() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-16 border-b border-border/50">
+    <section className="py-12 px-6 md:px-12 lg:px-16 border-b border-border/50">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
         {/* Left Column - Text */}
         <div className="flex-1 space-y-8">
@@ -23,7 +24,11 @@ export function SummarySection() {
           <RevealText delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-display font-bold leading-tight mb-6">
               Engineering from{" "}
-              <span className="text-neon">First Principles</span>.
+              <GlitchText
+                text="First Principles"
+                className="text-neon animate-glitch-1"
+              />
+              .
             </h2>
           </RevealText>
 

@@ -14,11 +14,6 @@ const socialLinks = [
     external: true,
   },
   {
-    label: "Portfolio",
-    href: "https://portfolio-website-beta-two-82.vercel.app/",
-    external: true,
-  },
-  {
     label: "Email",
     href: "mailto:rahulraghunathb2.0@gmail.com",
     external: false,
@@ -34,7 +29,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 border-t border-border"
+      className="py-16 flex flex-col items-center justify-center text-center px-6 border-t border-border"
     >
       <RevealText>
         <p className="text-xs font-mono uppercase tracking-[0.25em] text-muted mb-8">

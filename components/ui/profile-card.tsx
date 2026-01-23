@@ -19,19 +19,27 @@ export function ProfileCard({
 }: ProfileCardProps) {
   const capabilities = [
     {
-      icon: Check,
-      title: "FEASIBILITY_CHECK",
-      items: ["Tech Stack Analysis", "Cost Projection", "Risk Assessment"],
+      icon: Cpu,
+      title: "BUILD_ANYTHING",
+      items: [
+        "End-to-end Execution",
+        "Hardware-Software Bridge",
+        "System Optimization",
+      ],
     },
     {
       icon: Sparkles,
-      title: "RAPID_PROTOTYPING",
-      items: ["48h Turnaround", "Working MVP", "Live Demo Environment"],
+      title: "FAST_LEARNING",
+      items: ["New Tech Onboarding", "Rapid Prototyping", "Technical Research"],
     },
     {
       icon: Layers,
-      title: "SCALE_ARCHITECTURE",
-      items: ["Production Ready", "Load Balancing", "Security Audit"],
+      title: "PRODUCT_FIRST",
+      items: [
+        "UX-Centric Engineering",
+        "Scalable Foundations",
+        "Agile Mindset",
+      ],
     },
   ]
 
@@ -66,13 +74,6 @@ export function ProfileCard({
           <div className="w-6 h-6 border border-border rounded-sm flex items-center justify-center">
             <div className="w-2 h-2 bg-neon/50 rounded-full" />
           </div>
-        </div>
-
-        {/* Protocol label */}
-        <div className="mb-4 pb-4 border-b border-border">
-          <p className="text-[10px] font-mono text-muted uppercase tracking-wider">
-            Execution_Protocol_V1
-          </p>
         </div>
 
         {/* Capabilities */}
