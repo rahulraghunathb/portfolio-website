@@ -1,9 +1,10 @@
 import {
   HeroSection,
-  PhilosophySection,
+  SummarySection,
   CapabilitiesSection,
   WorkSection,
-  ScaleSection,
+  EducationSection,
+  GitHistorySection,
   ContactSection,
   Footer,
 } from "@/components/sections"
@@ -12,10 +13,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-accent">
       <HeroSection />
-      <PhilosophySection />
-      <CapabilitiesSection />
+      <SummarySection />
       <WorkSection />
-      <ScaleSection />
+      <CapabilitiesSection />
+      <EducationSection />
+      <GitHistorySection />
       <ContactSection />
       <Footer />
     </main>

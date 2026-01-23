@@ -6,6 +6,7 @@ import { IdentityBadge } from "@/components/ui/identity-badge"
 import { DiagnosticAlert } from "@/components/ui/diagnostic-alert"
 import { ProfileCard } from "@/components/ui/profile-card"
 import { SecurityLog } from "@/components/ui/security-log"
+import { GlitchText } from "@/components/ui/glitch-text"
 
 export function HeroSection() {
   return (
@@ -30,9 +31,9 @@ export function HeroSection() {
             <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.95] tracking-tight">
               <span className="text-foreground">Lead</span>
               <br />
-              <span className="text-foreground">Product</span>
+              <GlitchText text="Product" className="text-foreground" />
               <br />
-              <span className="text-foreground">Engineer</span>
+              <GlitchText text="Engineer" className="text-foreground" />
             </h1>
           </RevealText>
 
@@ -94,6 +95,7 @@ export function HeroSection() {
             name="Rahul Raghunath Bodanki"
             status="Available"
             availability="Open to Opportunities"
+            imageSrc="https://placehold.co/400x400/10b981/000000?text=Rahul"
           />
         </RevealText>
       </div>

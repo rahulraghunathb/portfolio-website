@@ -10,12 +10,22 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/rahul-raghunath-bodanki",
+    href: "https://www.linkedin.com/in/rahul-raghunath-bodanki/",
+    external: true,
+  },
+  {
+    label: "Portfolio",
+    href: "https://portfolio-website-beta-two-82.vercel.app/",
     external: true,
   },
   {
     label: "Email",
     href: "mailto:rahulraghunathb2.0@gmail.com",
+    external: false,
+  },
+  {
+    label: "Phone",
+    href: "tel:+917477575111",
     external: false,
   },
 ]

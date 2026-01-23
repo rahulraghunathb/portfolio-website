@@ -40,31 +40,24 @@ const technologies = [
   { name: "Pub/Sub", iconKey: "PubSub", category: "Queue" },
 
   // APIs & Real-time
-  { name: "REST", iconKey: "REST", category: "API" },
   { name: "WebSockets", iconKey: "WebSockets", category: "API" },
   { name: "WhatsApp API", iconKey: "WhatsApp", category: "Messaging" },
   { name: "Firebase", iconKey: "Firebase", category: "Cloud" },
-  { name: "SSH", iconKey: "SSH", category: "Infra" },
 
   // AI & LLM
   { name: "OpenAI", iconKey: "OpenAI", category: "AI" },
   { name: "Gemini", iconKey: "Gemini", category: "AI" },
   { name: "LangChain", iconKey: "LangChain", category: "AI" },
   { name: "LiveKit", iconKey: "LiveKit", category: "Voice" },
-  { name: "Cursor", iconKey: "Cursor", category: "AI IDE" },
-  { name: "Windsurf", iconKey: "Windsurf", category: "AI IDE" },
 
   // Payments & Scraping
   { name: "Razorpay", iconKey: "Razorpay", category: "Payments" },
-  { name: "Apify", iconKey: "Apify", category: "Scraping" },
 
   // Database & BaaS
   { name: "Supabase", iconKey: "Supabase", category: "BaaS" },
 
   // Geo & ML
   { name: "Vercel", iconKey: "Vercel", category: "Cloud" },
-  { name: "Earth Engine", iconKey: "EarthEngine", category: "ML" },
-  { name: "QGIS", iconKey: "QGIS", category: "Geo" },
 ]
 
 const capabilities = [
@@ -95,8 +88,8 @@ const capabilities = [
   {
     title: "Payments & Scraping",
     description:
-      "Razorpay payment gateway integration. Apify for web scraping at scale. SSH automation pipelines.",
-    techs: ["Razorpay", "Apify", "SSH"],
+      "Razorpay payment gateway integration. Web scraping at scale pipelines.",
+    techs: ["Razorpay"],
   },
   {
     title: "Vector & Data",

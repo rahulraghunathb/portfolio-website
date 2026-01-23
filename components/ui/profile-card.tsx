@@ -7,6 +7,7 @@ interface ProfileCardProps {
   name: string
   status: string
   availability: string
+  imageSrc?: string
 }
 
 export function ProfileCard({
@@ -14,6 +15,7 @@ export function ProfileCard({
   name,
   status,
   availability,
+  imageSrc,
 }: ProfileCardProps) {
   const capabilities = [
     {
@@ -42,9 +44,17 @@ export function ProfileCard({
         {/* Header */}
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
-            {/* Avatar placeholder */}
-            <div className="w-12 h-12 rounded-sm bg-gradient-to-br from-neon/20 to-neon/5 border border-neon/30 flex items-center justify-center">
-              <Cpu className="w-6 h-6 text-neon" />
+            {/* Avatar */}
+            <div className="w-12 h-12 rounded-sm bg-gradient-to-br from-neon/20 to-neon/5 border border-neon/30 flex items-center justify-center overflow-hidden">
+              {imageSrc ? (
+                <img
+                  src={imageSrc}
+                  alt={name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Cpu className="w-6 h-6 text-neon" />
+              )}
             </div>
             <div>
               <p className="text-[10px] font-mono text-neon uppercase tracking-wider">
